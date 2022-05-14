@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 import java.sql.*;
@@ -14,9 +15,11 @@ class Operation {
 
 		System.out.println("1. Insert");
 
-		System.out.println("2. Select");
+		System.out.println("2. Select ALL");
 
-		System.out.println("3. Exit");
+		System.out.println("3. Select with parameter Actor name");
+		
+		System.out.println("4. Exit");
 
 		Scanner reader = new Scanner(System.in);
 
@@ -123,9 +126,39 @@ class Operation {
 
 		break;
 
-		 
-
+		
+		
 		case 3:
+			
+						
+			scanName=new Scanner(System.in);
+			
+			System.out.println("Enter actor Name:");
+			
+			String ask = scanName.next();
+				
+		    sql = "Select movie_name from MOVIE_DB where lead_actor = '"+ ask +"' ;";
+			
+		    ResultSet r = stmt.executeQuery(sql);
+		    
+		    System.out.println("List of movies in which " + ask +" acted  :");
+			
+		    System.out.println("Movies");
+			
+		    while(r.next())
+		    {
+		    	movie_name = r.getString("movie_name");
+		    	
+		    	System.out.println(movie_name);
+				  	
+		    }
+			
+			
+			r.close();
+			
+		break;
+
+		case 4:
 
 		System.exit(0);
 
