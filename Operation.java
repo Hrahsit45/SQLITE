@@ -99,7 +99,7 @@ class Operation {
 
 		ResultSet rs = stmt.executeQuery("SELECT * FROM MOVIE_DB;");
 
-		System.out.println("ID\t Name\t\t Price\t Qty ");
+		System.out.println("ID\t Movie_name\t\t lead_Actor\t lead_actress\t Dir_Name\t Release_Date");
 
 		while ( rs.next() ) {
 
