@@ -10,7 +10,7 @@ class Operation {
 
 		do{
 
-		System.out.println("Select DML Operation For Product Table...");
+		System.out.println("Select DML Operation For MOVIE_DB Table...");
 
 		System.out.println("1. Insert");
 
